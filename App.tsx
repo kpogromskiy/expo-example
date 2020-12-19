@@ -1,10 +1,14 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, {useState} from 'react';
+import { StyleSheet, Text, View, Button } from 'react-native';
 
 export default function App() {
+  const [counter, setCounter] = useState(0);
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
+      <Text>{counter}</Text>
+      <Text>Increment counter</Text>
+      <Button title="Increment" onPress={() => setCounter(counter+1)} />
+      <Button title="Reset" onPress={() => setCounter(0)} />
     </View>
   );
 }
